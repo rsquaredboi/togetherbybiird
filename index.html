@@ -684,9 +684,7 @@
 
     /* ─── Testimonial Marquee ─── */
     .testimonial-marquee {
-      padding: 100px 0;
-      overflow: hidden;
-      max-width: 100vw;
+      padding: 100px 48px;
       border-top: 1px solid rgba(0,0,0,0.04);
       border-bottom: 1px solid rgba(0,0,0,0.04);
     }
@@ -697,21 +695,17 @@
       margin-bottom: 60px;
     }
     .tm-track {
-      display: flex;
-      animation: scrollCards 30s linear infinite;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-    }
-    @keyframes scrollCards {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      max-width: 1100px;
+      margin: 0 auto;
     }
     .tm-card {
-      min-width: 380px;
       background: var(--dark-card);
       border: 1px solid rgba(0,0,0,0.06);
       border-radius: var(--radius);
       padding: 36px;
-      flex-shrink: 0;
     }
     .tm-stars { margin-bottom: 16px; }
     .tm-stars svg { width: 16px; height: 16px; fill: var(--gold); }
@@ -886,8 +880,9 @@
       .collab-img { order: -1; }
       .tm-card { min-width: 280px; padding: 24px; }
       .tm-text { font-size: 14px; }
-      .testimonial-marquee { padding: 60px 0; }
+      .testimonial-marquee { padding: 60px 20px; }
       .testimonial-marquee h2 { font-size: 32px; margin-bottom: 32px; }
+      .tm-track { grid-template-columns: 1fr; max-width: 500px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-bottom { flex-direction: column; gap: 16px; }
       .sticky-bar { padding: 10px 20px; }
@@ -1031,14 +1026,14 @@
           <div class="pdp-thumb active" data-type="image" data-src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-EN_1200x.jpg?v=1750769334" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-EN_200x.jpg?v=1750769334" alt="Box open">
           </div>
-          <div class="pdp-thumb" data-type="video" data-src="https://www.biird.co/cdn/shop/videos/c/vp/21729114aeb4482a96bffc24ceda3c37/21729114aeb4482a96bffc24ceda3c37.HD-1080p-7.2Mbps-49957514.mp4?v=0" onclick="switchMedia(this)">
+          <div class="pdp-thumb" data-type="video" data-src="https://www.biird.co/cdn/shop/videos/c/vp/21729114aeb4482a96bffc24ceda3c37/21729114aeb4482a96bffc24ceda3c37.HD-1080p-7.2Mbps-49957514.mp4?v=0" data-poster="https://www.biird.co/cdn/shop/files/preview_images/preview_video_2_1024x1024.png?v=1751989276" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-EN_200x.jpg?v=1750769334" alt="Video 1">
             <span class="thumb-play">&#9654;</span>
           </div>
           <div class="pdp-thumb" data-type="image" data-src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-2_white_1200x.jpg?v=1750690661" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-2_white_200x.jpg?v=1750690661" alt="Cards stacked">
           </div>
-          <div class="pdp-thumb" data-type="video" data-src="https://www.biird.co/cdn/shop/videos/c/vp/465efddc74514607b84e008db0dbb77b/465efddc74514607b84e008db0dbb77b.HD-1080p-7.2Mbps-51040387.mp4?v=0" onclick="switchMedia(this)">
+          <div class="pdp-thumb" data-type="video" data-src="https://www.biird.co/cdn/shop/videos/c/vp/465efddc74514607b84e008db0dbb77b/465efddc74514607b84e008db0dbb77b.HD-1080p-7.2Mbps-51040387.mp4?v=0" data-poster="https://www.biird.co/cdn/shop/files/preview_images/UGC-thumbnail_1024x1024.jpg?v=1752225251" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-4_200x.jpg?v=1750690661" alt="Video 2">
             <span class="thumb-play">&#9654;</span>
           </div>
@@ -1048,7 +1043,7 @@
           <div class="pdp-thumb" data-type="image" data-src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-3_1200x.jpg?v=1750690661" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-3_200x.jpg?v=1750690661" alt="Cards spread">
           </div>
-          <div class="pdp-thumb" data-type="video" data-src="https://cdn.shopify.com/videos/c/o/v/af9bc4253e834067a62a676f38a7b338.mp4" onclick="switchMedia(this)">
+          <div class="pdp-thumb" data-type="video" data-src="https://cdn.shopify.com/videos/c/o/v/af9bc4253e834067a62a676f38a7b338.mp4" data-poster="https://www.biird.co/cdn/shop/files/Together_Ecommerce-3_1200x.jpg?v=1750690661" onclick="switchMedia(this)">
             <img src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-3_200x.jpg?v=1750690661" alt="Video 3">
             <span class="thumb-play">&#9654;</span>
           </div>
@@ -1116,13 +1111,13 @@
 
   <!-- Lifestyle -->
   <section class="lifestyle-split">
-    <img src="https://www.biird.co/cdn/shop/files/Together-mood2_1_1200x.jpg?v=1750759617" alt="Couple playing">
-    <img src="https://www.biird.co/cdn/shop/files/Couple_1_1200x.jpg?v=1750762162" alt="Intimate moment">
+    <img src="https://www.biird.co/cdn/shop/files/Together-mood2_1_800x.jpg?v=1750759617" alt="Couple playing" loading="lazy">
+    <img src="https://www.biird.co/cdn/shop/files/Couple_1_800x.jpg?v=1750762162" alt="Intimate moment" loading="lazy">
   </section>
 
   <!-- Why It Works -->
   <section class="why-works">
-    <img class="why-works-img" src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-4_1200x.jpg?v=1750690661" alt="Cards on table">
+    <img class="why-works-img" src="https://www.biird.co/cdn/shop/files/Together_Ecommerce-4_800x.jpg?v=1750690661" alt="Cards on table" loading="lazy">
     <div class="why-works-content">
       <span class="section-label">Backed by science</span>
       <h2>Why It Actually Works</h2>
@@ -1150,7 +1145,7 @@
         </div>
       </div>
     </div>
-    <div class="collab-img"><img src="https://www.biird.co/cdn/shop/files/collaboration-small_1200x.jpg?v=1749729204" alt="Jouissance Club cards"></div>
+    <div class="collab-img"><img src="https://www.biird.co/cdn/shop/files/collaboration-small_800x.jpg?v=1749729204" alt="Jouissance Club cards" loading="lazy"></div>
   </section>
 
   <!-- Testimonial Marquee -->
@@ -1163,17 +1158,12 @@
       <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"Finally, a way to talk about the deep stuff without it feeling awkward. We play every Friday now."</div><div class="tm-author">Emilie G. <span class="tm-verified">&bull; Verified</span></div></div>
       <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"Got this as a gift and didn't expect much. Three hours later we were still playing. Life-changing."</div><div class="tm-author">Jamie &amp; Taylor <span class="tm-verified">&bull; Verified</span></div></div>
       <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"The quality is incredible. Matte cards, beautiful box. We keep it on our nightstand permanently."</div><div class="tm-author">Chen &amp; Li <span class="tm-verified">&bull; Verified</span></div></div>
-      <!-- Duplicate for infinite loop -->
-      <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"We've been together 8 years and thought we knew everything about each other. This game proved us wrong in the best way."</div><div class="tm-author">Sarah &amp; Mike <span class="tm-verified">&bull; Verified</span></div></div>
-      <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"Bought this for our anniversary and it completely changed our routine. The ritual cards are a genius touch."</div><div class="tm-author">Alex &amp; Jordan <span class="tm-verified">&bull; Verified</span></div></div>
-      <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"The illustrations are gorgeous and the card quality is premium. It feels like a gift, not just a game."</div><div class="tm-author">Marco T. <span class="tm-verified">&bull; Verified</span></div></div>
-      <div class="tm-card"><div class="tm-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.38 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div><div class="tm-text">"Finally, a way to talk about the deep stuff without it feeling awkward. We play every Friday now."</div><div class="tm-author">Emilie G. <span class="tm-verified">&bull; Verified</span></div></div>
     </div>
   </section>
 
   <!-- Why Love -->
   <section class="why-love">
-    <img class="why-love-img" src="https://www.biird.co/cdn/shop/files/Together_Packaging-open_EN_1200x.png?v=1750666087" alt="Together box">
+    <img class="why-love-img" src="https://www.biird.co/cdn/shop/files/Together_Packaging-open_EN_800x.png?v=1750666087" alt="Together box" loading="lazy">
     <div class="why-love-content">
       <h2>Why people love it</h2>
       <div class="love-grid">
@@ -1254,13 +1244,30 @@
       if (type === 'video') {
         mainImg.style.display = 'none';
         mainVid.style.display = 'block';
+        mainVid.poster = thumb.dataset.poster || '';
         mainVid.src = src;
         mainVid.load();
         // Wait for video to be ready before playing
         mainVid.onloadeddata = function() {
           mainVid.play().catch(function() {});
         };
+        // Fallback: if video fails to load, show poster as image
+        mainVid.onerror = function() {
+          mainVid.style.display = 'none';
+          mainImg.style.display = 'block';
+          mainImg.src = thumb.dataset.poster || thumb.querySelector('img').src.replace('_200x', '_1200x');
+        };
+        // Timeout fallback: if video hasn't loaded in 5s, show poster
+        clearTimeout(window._vidTimeout);
+        window._vidTimeout = setTimeout(function() {
+          if (mainVid.readyState === 0 && mainVid.style.display !== 'none') {
+            mainVid.style.display = 'none';
+            mainImg.style.display = 'block';
+            mainImg.src = thumb.dataset.poster || thumb.querySelector('img').src.replace('_200x', '_1200x');
+          }
+        }, 5000);
       } else {
+        clearTimeout(window._vidTimeout);
         mainVid.pause();
         mainVid.removeAttribute('src');
         mainVid.style.display = 'none';
